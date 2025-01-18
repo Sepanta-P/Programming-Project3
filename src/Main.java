@@ -165,11 +165,12 @@ public class Main {
                 case 4:// Admin View Orders
                     System.out.println("Enter Admin password: ");
                     String password=sc.nextLine();
-                    if(!password.equals("admin123")){ //to see if they entered the right password
-                        System.out.println("Password incorrect");
-                        break;
+                    // Loop until the correct password is entered
+                    while (!password.equals("admin123")) {
+                        System.out.println("Password incorrect, please try again: ");
+                        password = sc.nextLine();
                     }
-                    if (orders.size()==0){ //check if there are any orders to view
+                    if (orders.size()==0){ // check if there are any orders to view
                         System.out.println("No orders yet");
                         break;
                     }
