@@ -46,10 +46,7 @@ public class Main {
         ArrayList<String> cart = new ArrayList<>();
         ArrayList<String> orders = new ArrayList<>();
 
-            boolean running=true;
-            while (running) {
-                System.out.println("\n--- Welcome to the Online Shop ---");
-                Syste.out.println("1. Browse products");
+            
 
         
 
