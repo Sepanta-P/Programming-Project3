@@ -5,12 +5,12 @@ public class Main {
         System.out.println("Welcome to our Website. Please enter the shopping category you want to explore: ");
 
 
-        ArrayList<String> categories = new ArrayList<>();
+        ArrayList<String> categories = new ArrayList<>();//arrayList for all the shopping categories
         categories.add("Electronics");
         categories.add("Clothing");
         categories.add("Books");
 
-        ArrayList<String> productNames = new ArrayList<>();
+        ArrayList<String> productNames = new ArrayList<>();// all the products in order
         productNames.add("Laptop");
         productNames.add("Headphones");
         productNames.add("Smartphone");
@@ -21,7 +21,7 @@ public class Main {
         productNames.add("Non-Fiction");
         productNames.add("Comics");
 
-        ArrayList<Integer> availability = new ArrayList<>();
+        ArrayList<Integer> availability = new ArrayList<>();// all the quantities
         availability.add(5);
         availability.add(10);
         availability.add(0);
@@ -32,7 +32,7 @@ public class Main {
         availability.add(10);
         availability.add(8);
 
-        ArrayList<Double> prices = new ArrayList<>();
+        ArrayList<Double> prices = new ArrayList<>();//all the prices
         prices.add(1000.0);
         prices.add(100.0);
         prices.add(800.0);
@@ -43,8 +43,8 @@ public class Main {
         prices.add(25.0);
         prices.add(10.0);
 
-        ArrayList<String> cart = new ArrayList<>();
-        ArrayList<String> orders = new ArrayList<>();
+        ArrayList<String> cart = new ArrayList<>();// an array for the cart
+        ArrayList<String> orders = new ArrayList<>();// an array for the list of all orders
         boolean running = true;
         while (running) {
             System.out.println("\n--- Welcome to the Online Shop ---");
