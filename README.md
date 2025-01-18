@@ -17,6 +17,6 @@ Users can view all items in their cart, including quantities and prices. They ca
 # Checkout Logic
 During checkout, the program calculates the total price of all items in the cart and shows an invoice. The order is then saved and the cart is cleared for new purchases. The program will then thank the user for shopping using this wesbite.
 # Admin:
-Admins can view all oderders by entering a password. If the passoword is worng access i9s denied and they will be asked to enter the password again. If no orders have been placed, the program shows a message saying no orders are available.
+Admins can view all oderders by entering a password. If the passoword is worng access is denied and they will be asked to enter the password again. If no orders have been placed, the program shows a message saying no orders are available.
 # Exit:
-The progrma allows the user to exit anytime, It shows a goodbye message aswell.
+The program allows the user to exit anytime, It shows a goodbye message as well.
