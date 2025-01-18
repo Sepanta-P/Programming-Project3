@@ -5,74 +5,47 @@ public class Main {
         System.out.println("Welcome to our shopping Website. Please enter the shopping category you want to explore: ");
 
 
-        System.out.println("Electronics.");
-        ArrayList <String> e =new ArrayList<String>();
-        e.add("Iphone 16 pro max");
-        e.add("Airpods Pro");
-        e.add("Laptop");
-        e.add("Tablet");
-        e.add("Tevision");
+        ArrayList<String> categories = new ArrayList<>();
+        categories.add("Electronics");
+        categories.add("Clothing");
+        categories.add("Books");
 
+        ArrayList<String> productNames = new ArrayList<>();
+        productNames.add("Laptop");
+        productNames.add("Headphones");
+        productNames.add("Smartphone");
+        productNames.add("T-Shirt");
+        productNames.add("Jeans");
+        productNames.add("Jacket");
+        productNames.add("Fiction");
+        productNames.add("Non-Fiction");
+        productNames.add("Comics");
 
+        ArrayList<Integer> availability = new ArrayList<>();
+        availability.add(5);
+        availability.add(10);
+        availability.add(0);
+        availability.add(15);
+        availability.add(10);
+        availability.add(5);
+        availability.add(20);
+        availability.add(10);
+        availability.add(8);
 
+        ArrayList<Double> prices = new ArrayList<>();
+        prices.add(1000.0);
+        prices.add(100.0);
+        prices.add(800.0);
+        prices.add(20.0);
+        prices.add(50.0);
+        prices.add(100.0);
+        prices.add(15.0);
+        prices.add(25.0);
+        prices.add(10.0);
 
-        System.out.println("Groceries");
-        ArrayList <String> g=new ArrayList<String>();
-        g.add("Apples");
-        g.add("Oranges");
-        g.add("Cucumbers");
-        g.add("Mango");
+        ArrayList<String> cart = new ArrayList<>();
+        ArrayList<String> orders = new ArrayList<>();
 
-
-
-
-
-        System.out.println("Films");
-        ArrayList <String> f=new ArrayList<String>();
-        f.add("SpiderMan");
-        f.add("Batman");
-        f.add("Inside Out");
-
-
-        System.out.println("Books");
-        System.out.println("Admin");
-        String category = sc.nextLine();
-
-
-
-
-        ArrayList<String> Books=new ArrayList<String>();
-
-
-        int cost=0;
-        switch (category) {
-            case "Electronics":
-
-
-                break;
-            case "Groceris":
-
-
-                break;
-
-
-            case "Films":
-
-
-                break;
-
-
-            case "Books":
-
-
-                break;
-
-
-            case "Admin":
-
-
-                break;
-        }
 
 
     }
