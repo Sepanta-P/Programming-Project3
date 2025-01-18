@@ -2,7 +2,7 @@ import java.util.*;  //Password is Admin123
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Welcome to our shopping Website. Please enter the shopping category you want to explore: ");
+        System.out.println("Welcome to our Website. Please enter the shopping category you want to explore: ");
 
 
         ArrayList<String> categories = new ArrayList<>();
