@@ -1,4 +1,4 @@
-import java.util.*;  //Password is Admin123
+import java.util.*;  //Password is admin123
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
