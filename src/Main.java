@@ -115,7 +115,36 @@ public class Main {
                     }
 
                     System.out.println("\n--- Your Cart ---");
+                    for(int i=0; i<categories.size(); i++) {
+                        System.out.println((i+1)+". "+categories.get(i));
+                    }
+                    System.out.println("1. Remove Item\n2. Back to Main Menu.");
+                    System.out.println("choose an option: ");
+                    int cartChoice=sc.nextInt();
+                    switch (cartChoice) {
+                        case 1:
+                            System.out.println("Select Item to remove: ");
+                            int removeIndex= sc.nextInt()-1;
+
+                            if(removeIndex<0 || removeIndex>=categories.size()){
+                                System.out.println("Please choose a valid item");
+                            } else{
+                                System.out.println("Removing "+categories.get(removeIndex)+" from your cart.");
+                        }
+                            break;
+                            case 2:
+                                break;
+
+                                default:
+                                    System.out.println("Please choose a valid option");
+                                    break;
+                    }
                     break;
+
+                case 3:
+
+                    break;
+
             }
 
             
