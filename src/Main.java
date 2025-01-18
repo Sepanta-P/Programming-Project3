@@ -69,9 +69,10 @@ public class Main {
                         System.out.println("Please choose a valid category.");
                         break;
                     }
-                    int categoryIndex=categoryChoice-1;
+                    int categoryIndex=categoryChoice-1;// Determine the selected category index
                     System.out.println("\n--- Product in" + categories.get(categoryIndex)+ "---");
                     for(int i=categoryIndex*3; i<(categoryIndex +1)*3;i++){
+                        //Display the products in the selected category
                         String stockMessage= "Out of Stock";
                         if (availability.get(i)>0){
                             stockMessage= availability.get(i)+"in stock";
@@ -81,42 +82,42 @@ public class Main {
                     System.out.println(" Select a product to add to cart or press 0 to go back to Main Menu");
                     int productChoice=sc.nextInt();
 
-                    if(productChoice==0){
+                    if(productChoice==0){// User chooses to go back
                         break;
                     }
-                    if(productChoice<1||productChoice>3){
+                    if(productChoice<1||productChoice>3){ //Validate Product Choice
                         System.out.println("Please choose a valid product to add to cart");
                     }
 
-                    int productIndex= categoryIndex*3 +productChoice-1;
+                    int productIndex= categoryIndex*3 +productChoice-1;// Calculating the product Index
                     if(availability.get(productIndex)==0){
                         System.out.println("THis product is out of stock");
                     }else{
                         System.out.println("Enter your desired quantity: ");
                         int quantity=sc.nextInt();
 
-                        if(quantity>availability.get(productIndex)){
+                        if(quantity>availability.get(productIndex)){// check if the  quantity  they want is available
                             System.out.println("Insufficient quantity");
                         } else{
-                            availability.set(productIndex,availability.get(productIndex)-quantity);
+                            availability.set(productIndex,availability.get(productIndex)-quantity);//Update Stock
                             double totalPrice=prices.get(productIndex)*quantity;
                             String cartItem=productNames.get(productIndex)+" (x"+quantity+") - $"+totalPrice;
-                            cart.add(cartItem);
+                            cart.add(cartItem);// Add adding the item to cart
                             System.out.println("Added to cart: "+cartItem);
                         }
 
                     }
                     break;
 
-                case 2:
-                    if(cart.size()==0){
+                case 2:// View Cart
+                    if(cart.size()==0){//Check if the cart is empty
                         System.out.println("The cart is empty");
                         break;
                     }
 
                     System.out.println("\n--- Your Cart ---");
                     for(int i=0; i<categories.size(); i++) {
-                        System.out.println((i+1)+". "+categories.get(i));
+                        System.out.println((i+1)+". "+categories.get(i));// Display cart with prices
                     }
                     System.out.println("1. Remove Item\n2. Back to Main Menu.");
                     System.out.println("choose an option: ");
@@ -129,7 +130,7 @@ public class Main {
                             if(removeIndex<0 || removeIndex>=categories.size()){
                                 System.out.println("Please choose a valid item");
                             } else{
-                                System.out.println("Removing "+categories.get(removeIndex)+" from your cart.");
+                                System.out.println("Removing "+categories.get(removeIndex)+" from your cart.");//For removing an item from cart
                         }
                             break;
                             case 2:
@@ -142,22 +143,52 @@ public class Main {
                     break;
 
                 case 3:
+                    if (cart.size()==0){// Prevent checkout if cart is empty
+                        System.out.println("The cart is empty");
+                        break;
+                    }
+                    System.out.println("\n--- Invoice ---");
+                    double total=0;
+                    for(String item:cart){
+                        System.out.println(item);// Displaying all items inside the cart
 
+                        String priceString= item.substring(item.lastIndexOf("$")+1);
+                        double itemPrice= Double.parseDouble(priceString);//Extracting the total price from the item string by parsing it
+                        total+=itemPrice;
+                    }
+                    System.out.println("\nTotal: $"+total);
+                    System.out.println("Thank you for your order!");
+                    orders.add("Order "+(orders.size()+1)+": "+cart); // saving the order so admin could view them
+                    cart.clear();// clearing cart so the next customer won't have any problems
                     break;
 
+                case 4:// Admin View Orders
+                    System.out.println("Enter Admin password: ");
+                    String password=sc.nextLine();
+                    if(!password.equals("admin123")){ //to see if they entered the right password
+                        System.out.println("Password incorrect");
+                        break;
+                    }
+                    if (orders.size()==0){ //check if there are any orders to view
+                        System.out.println("No orders yet");
+                        break;
+                    }
+                    System.out.println("\n--- All Orders ---");
+                    for(String order:orders){
+                        System.out.println(order);// Display each order
+                    }
+                    break;
+
+                case 5: //Exit
+                    System.out.println("Thank you for visiting our website!");
+                    running = false; //Terminate the loop tp exit
+                    break;
+                    default:
+                        System.out.println("Please choose a valid option");
             }
-
-            
-
-        
-
-
-
-
-
-
-
-
         }
+
+
+
     }
 }
